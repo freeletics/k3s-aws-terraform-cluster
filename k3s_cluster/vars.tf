@@ -146,3 +146,8 @@ variable "k3s_token" {
   type        = string
   description = "Override to set k3s cluster registration token"
 }
+
+variable "k3s_version" {
+  type        = string 
+  description = "k3s version to deploy"
+}
