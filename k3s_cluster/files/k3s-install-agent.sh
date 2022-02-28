@@ -22,7 +22,7 @@ hostname $NEW_HOSTNAME
 sudo sed -i "s/$CUR_HOSTNAME/$NEW_HOSTNAME/g" /etc/hosts
 sudo sed -i "s/$CUR_HOSTNAME/$NEW_HOSTNAME/g" /etc/hostname
 
-until (curl -sfL https://get.k3s.io | K3S_TOKEN=${k3s_token} K3S_URL=https://${k3s_url}:6443 sh -s - --node-ip $local_ip --flannel-iface $flannel_iface --kubelet-arg="provider-id=aws:///$provider_id"); do
+until (curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION = ${k3s_version} K3S_TOKEN=${k3s_token} K3S_URL=https://${k3s_url}:6443 sh -s - --node-ip $local_ip --flannel-iface $flannel_iface --kubelet-arg="provider-id=aws:///$provider_id"); do
     echo 'k3s did not install correctly'
     sleep 2
 done
